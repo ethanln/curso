@@ -1,0 +1,748 @@
+/*#464646 - header, text hover
+ *#ccc - text, button-hover 
+ *#7F7E7E - button 
+ */
+ 
+ /*
+  * #6AB1B8 - header, text hover
+  * #D1F0F1 - text, button-hover
+  * #428F96 - button 
+  */
+body {
+	height:980px;
+	background-color: #fff;
+	background-image: url("/images/background-color1.jpg");
+}
+
+.main-container{
+	height: 100%;
+    min-height: 1000px;
+    
+    background: linear-gradient(135deg, rgba(0,0,0,0.65) 0,rgba(0,0,0,.1) 1px);
+    background-size: 1px 2px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0px auto !important;
+}
+
+.btn-xs {
+    font-size: 10px !important;
+    line-height: 1 !important;
+}
+
+.btn-sm {
+    font-size: 12 !important;
+    line-height: 1.2 !important;
+}
+
+#heading {
+    font-weight: bold;
+    font-size: 1.2em;
+    border-bottom: 1px solid #666;
+    margin-bottom: 5px;
+}
+
+.title {
+    margin: 20px 0px 10px 0px;
+    font-size: 1.5em;
+}
+
+.item {
+    margin: 5px 0px;
+}
+
+.navbar {
+    margin-top: 0px;
+    margin-bottom: 0px !important;
+    border-radius: 0px !important;
+}
+
+
+.navbar-default {
+    background-color: #002549!important;
+    background-image: none;
+    background-repeat: no-repeat;
+    filter: none;
+    border: none !important;
+    height: 100%;
+    background: -webkit-radial-gradient(top left, ellipse cover, rgba(255,255,255,0.5) 0%,rgba(9, 33, 41,0.5) 100%),repeat;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#012257+1,0b3a6c+26,0b3a6c+26,012257+100 */
+	/*background: rgb(255,255,255);*/ /* Old browsers */
+	/*background: -moz-linear-gradient(left,  rgba(255,255,255,1) 1%, rgba(106, 177, 184,1) 26%, rgba(106, 177, 184,1) 26%, rgba(255,255,255,1) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(1%,rgba(255,255,255,1)), color-stop(26%,rgba(106, 177, 184,1)), color-stop(26%,rgba(106, 177, 184,1)), color-stop(100%,rgba(255,255,255,1))); 
+	background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 1%,rgba(106, 177, 184,1) 26%,rgba(106, 177, 184,1) 26%,rgba(255,255,255,1) 100%); 
+	background: -o-linear-gradient(left,  rgba(255,255,255,1) 1%,rgba(106, 177, 184,1) 26%,rgba(106, 177, 184,1) 26%,rgba(255,255,255,1) 100%); 
+	background: -ms-linear-gradient(left,  rgba(255,255,255,1) 1%,rgba(106, 177, 184,1) 26%,rgba(106, 177, 184,1) 26%,rgba(255,255,255,1) 100%);
+	background: linear-gradient(to right,  rgba(255,255,255,1) 1%,rgba(106, 177, 184,1) 26%,rgba(106, 177, 184,1) 26%,rgba(255,255,255,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#012257', endColorstr='#012257',GradientType=1 );*/
+
+}
+
+.navbar-default .navbar-nav>li>a {
+    padding-top: 20px;
+    color: #333 !important;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-brand {
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 35px;
+    margin-top: 60px;
+    margin-right: 50px;
+}
+
+
+.login-button {
+    margin-top: 8px;
+}
+
+.btn-primary {
+    background-color: #aec4f5 !important;
+    border-color: #333 !important;
+    color: #333 !important;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    display: none;
+}
+
+.form-control {
+    height: 24px !important;
+    padding: 3px 6px !important;
+    font-size: 12px !important;
+}
+
+.editableform .form-control {
+    width: 300px;
+}
+
+.search {
+    font-size: 1.2em;
+}
+
+#header {
+}
+
+#main {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+#new-item, .edit {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    line-height: 1.4em;
+    border: 0;
+    outline: none;
+    color: inherit;
+    padding: 6px;
+    border: 1px solid #999;
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+#new-item {
+    padding: 16px 16px 16px 60px;
+    border: none;
+    background: #efefef;
+    z-index: 2;
+    box-shadow: none;
+    font-style: italic;
+}
+
+#todo-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#todo-list li {
+	position: relative;
+	font-size: 24px;
+	border-bottom: 1px dotted #ccc;
+}
+
+#todo-list li:last-child {
+	border-bottom: none;
+}
+
+#todo-list li.editing {
+	border-bottom: none;
+	padding: 0;
+}
+
+#todo-list li.editing .edit {
+	display: block;
+	width: 506px;
+	padding: 13px 17px 12px 17px;
+	margin: 0 0 0 43px;
+}
+
+#todo-list li.editing .view {
+	display: none;
+}
+
+#todo-list li label.check {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+}
+
+#todo-list li label.check:before {
+    content: '✔';
+    color: #d9d9d9;
+    text-shadow: 0 -1px 0 #bfbfbf;
+    font-size: 20px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    left: 0;
+    bottom: 1px;
+}
+
+#todo-list li.completed label.check:before {
+    color: #85ada7;
+    text-shadow: 0 1px 0 #669991;
+    bottom: 1px;
+}
+
+#todo-list li label {
+	word-break: break-word;
+	font-weight: normal;
+	padding: 15px;
+	line-height: 1.2;
+	-webkit-transition: color 0.4s;
+	-moz-transition: color 0.4s;
+	-ms-transition: color 0.4s;
+	-o-transition: color 0.4s;
+	transition: color 0.4s;
+}
+
+#todo-list li.completed label {
+	color: #a9a9a9;
+	text-decoration: line-through;
+}
+
+#todo-list li .destroy {
+    border: none;
+    background-color: none;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    margin: auto 0;
+    font-size: 22px;
+    color: #a88a8a;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+button.destroy {
+    background: none;
+}
+
+#todo-list li .destroy:hover {
+    background: none;
+    text-shadow: 0 0 1px #000,
+    0 0 10px rgba(199, 107, 107, 0.8);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+#todo-list li .destroy:after {
+    content: '✖';
+}
+
+#todo-list li:hover .destroy {
+    display: block;
+}
+
+#todo-list li .edit {
+    display: none;
+}
+
+#todo-list li.editing:last-child {
+    margin-bottom: -1px;
+}
+
+#list-count {
+    font-size: 1.1em;
+}
+
+.right {
+    text-align: right;
+}
+
+input[type="checkbox"]:focus {
+    outline: none;
+}
+
+#loginBtn, #exitBtn, #registerBtn{
+	color: #fff;
+	background-color: #587498;
+	border-style:none;
+}
+.dialog-button{
+	background-color: #14395C;
+	color: #fff;
+}
+
+#loginBtn:hover, #registerBtn:hover, .dialog-button:hover{
+	color: #464646;
+	border-style:none;
+}
+
+#login-register-logout{
+	margin-top: 75px;
+	margin-right: 30px;
+	float:right;
+	position: relative;
+	display: inline-block;
+	padding: 5px 5px 15px 5px;
+	color: #fff;
+}
+
+.navbar-custom{
+	position:relative;
+	display: block;
+	height: 50px;
+}
+
+#menu{
+	width:960px;
+	height:40px;
+	margin: 0px auto;
+}
+
+#menu ul {
+    height: auto;
+    padding: 15px 0px;
+    margin: 0px;	
+}
+
+#menu li {
+	display: inline;
+	padding: 20px;
+}
+
+#menu li a{
+	color: #eee;
+	font-size: 16px;
+	font-weight: bold;
+	display: inline;
+	padding: 0 70px 0 0;
+}
+
+#menu li a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+
+#search-home{
+	
+	width: 700px;
+	height: 200px;
+	margin-top: 100px;
+}
+
+.error-box{
+	width: 700px;
+	height: 200px;
+	margin-top: 100px;
+}
+
+.exterior{
+	width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    border-radius: 200px;
+    padding: 10px;
+    background: linear-gradient(1deg, rgba(20, 57, 92,0.95) 0,rgba(20, 57, 92,.40) 1px);
+    background-size: 1px 2px;
+}
+
+#start-search-link{
+	color: #fff;
+	text-decoration: none;
+}
+
+.exterior:hover{
+	color: #fff;
+    background: linear-gradient(1deg, rgba(20, 57, 92,.25) 0,rgba(20, 57, 92,.50) 1px);
+    background-size: 1px 2px;
+}
+
+.interior{
+	background-color: #428F96;
+}
+
+.search-text, .error-text {
+	font-weight: bold;
+	font-size: 40px;
+	margin-top: 60px;
+	letter-spacing: 10px;
+}
+
+.error-text{
+	font-size:30px !important;
+}
+
+.dialog{
+	margin-top: 100px;
+    width: 600px;
+    height: 250px;
+    padding: 25px;
+    border-radius: 15px 15px 15px 15px;
+    background: linear-gradient(1deg, rgba(20, 57, 92,0.95) 0,rgba(20, 57, 92,.50) 1px);
+    background-size: 1px 2px;
+}
+
+.dialog-login{
+	height: 300px !important;
+}
+
+.dialog-register{
+	height: 330px !important;
+}
+
+.dialog-search{
+	height: 325px !important;
+	width: 600px !important;
+}
+
+.dialog-review{
+	height: 650px !important;
+	width: 600px !important;
+}
+
+.dialog-table{
+	width: 100%;
+	height: 100%;
+}
+
+.dialog-dropdown{
+	height:40px;
+	width:180px;
+	margin-left: -5px;
+	color: #000;
+}
+
+.dialog-dropdown option{
+	padding:7px;
+}
+
+.dialog-table td{
+	padding: 5px;
+}
+
+.dialog-label{
+	font-weight: bold;
+	font-size: 40px;
+}
+
+.dialog-label-box{
+	letter-spacing: 5px;
+	font-weight: bold;
+	font-size: 25px;
+	margin-right:20px;
+}
+
+.dialog-text-box{
+	border:0px;
+	border-radius: 4px 4px 4px 4px;
+	height:35px;
+	padding: 3px;
+	position: relative;
+	color: #000;
+	float: right;
+	right: 20px;
+}
+
+.dialog-button{
+	margin-left:20px;
+}
+
+.dialog-row{
+	margin-top:15px;
+}
+
+.buttons-box{
+	float: left;
+	position:relative;
+	bottom: -20px;
+}
+
+.alert{
+	font-weight: bold;
+	font-size: 14px;
+	color: #fff;
+	float: right;
+}
+
+.dialog-label-school{
+	margin-left: -28%;
+}
+
+.dialog-label-professor{
+	margin-left: -18%;
+}
+
+.dialog-label-course{
+	margin-left: -11%;
+}
+
+.review-sheet{
+	width: 100%;
+	float: left;
+	color: #000;
+}
+
+textarea {
+   resize: none;
+}
+
+.exit-button-box{
+	margin-top:25px
+}
+
+#exitBtn:hover{
+	color: #428F96;
+	background-color:#D1F0F1;
+}
+
+.course-box{
+    width: 100%;
+    height: 220px;
+    margin-top: 40px;
+    border-radius: 20px;
+    background: linear-gradient(1deg, rgba(20, 57, 92,.25) 0,rgba(20, 57, 92,.70) 1px);
+    background-size: 1px 2px;
+}
+
+.course-box-header{
+	color: #fff;
+    height: 50px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.course-box-header a:hover{
+	color: #fff;
+    text-decoration:none;
+}
+
+.course-box-link, .selected-course-box-title{
+	font-family: 'Roboto';
+    color: #EEEEEE;
+    font-size: 30px;
+    margin-left: 30px;
+    margin-top: 5px;
+    float: left;
+}
+
+.course-container{
+	margin-top: -20px;
+}
+
+.no-result{
+	font-family: 'Roboto';
+    font-size: 20px;
+}
+
+.course-detail-table-leftside{
+    float: left;
+    margin-left: 30px;
+    margin-top: 10px; 
+    position: absolute;
+}
+
+.course-detail-table-info{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Roboto';
+    padding: 10px;
+    border-radius: 20px;
+    display: inherit;
+    margin-left: 5%;
+    margin-top: 13px;
+    margin-right: 5%;
+}
+
+.review-detail-table-info{
+	font-size: 20px;
+	font-weight: bold;
+	font-family: "Roboto";
+	padding: 10px;
+	border-radius: 20px;
+	margin-left: 15px;
+	float: left;
+	margin-top: 40px;
+}
+
+.review-text{
+    font-family: "Roboto";
+	font-size: 16px;
+	height: 100px;
+	margin-top: 15px;
+	width: 560px;
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.course-detail-table-leftside{
+	font-size: 20px;
+    font-weight: bold;
+    font-family: 'Roboto';
+}
+
+.course-detail-table-right{
+	padding: 0px 0px 0px 30px;
+}
+
+.page-title{
+	font-family: 'Roboto';
+    float: left;
+}
+
+.page-title-review{
+	font-size: 40px;
+    margin-bottom: -10px;
+}
+
+.page-title-review-border{
+	height: 40px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.page-title-box{
+	position: relative;
+    display: inline-block;
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+.selected-course-box{
+	width: 50%;
+    height: 260px;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+.header-selected-course-box{
+	border-radius: 20px 20px 0 0;
+    height: 50px;
+}
+
+.course-review-box{
+	width: 100%;
+	height: 200px;
+	margin-top: 30px;
+	border-radius: 20px;
+}
+
+.write-immediate-review{
+    margin-left: 30px;
+    position: absolute;
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.course-review-left{
+	width: 320px;
+	height: 100%;
+	margin: 0px auto;
+	float: left;
+	border-radius: 20px 0px 0px 20px;
+}
+
+.page-title
+{
+	color: #14395C!important;
+}
+
+.review-detail-table-info,
+.navbar-default .navbar-brand,
+.search-text, 
+.error-text,
+.course-detail-table-leftside,
+.course-detail-table-info,
+.write-immediate-review,
+.review-text,
+.dialog
+{
+	color: #EEEEEE !important;
+}
+
+.navbar-custom
+{
+	background-color: #6585A4;
+}
+
+#loginBtn:hover, 
+#registerBtn:hover, 
+.dialog-button:hover
+{
+    background-color: #ccc;
+}
+
+.navbar-default .navbar-brand,
+#menu li a,
+.search-text, 
+.error-text,
+.dialog-label,
+.dialog-label-box,
+.alert 
+{
+	font-family: Roboto;
+}
+
+.write-immediate-review:hover{
+	color: #fff;
+}
+
+.course-box-header,
+.selected-course-box,
+.header-selected-course-box,
+.course-review-box,
+.course-review-left
+{
+	background: linear-gradient(1deg, rgba(20, 57, 92,.25) 0,rgba(20, 57, 92,.70) 1px);
+    background-size: 1px 2px;
+}
+
+
+
+
+
+
+
+
