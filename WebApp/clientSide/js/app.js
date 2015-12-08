@@ -17,6 +17,8 @@ var App = React.createClass({
 
     // initial state
     getInitialState: function() {
+		// set current page to home
+		currentPage = "home_redirect";
         return {
 	        // the user is logged in
             loggedIn: auth.loggedIn()
@@ -36,7 +38,13 @@ var App = React.createClass({
     // logout the user and redirect to home page
     logout: function(event) {
         auth.logout();
-        this.context.router.replaceWith('/home');
+        // refresh navigation bar
+        if(currentPage == "write_review"){
+			this.context.router.replaceWith('/home');
+		}
+		else{
+			this.forceUpdate();
+		}
     },
 
     // show the navigation bar
@@ -81,8 +89,21 @@ var App = React.createClass({
 	}
 });
 
+//--***********************************--
+//			     HOME PAGE
+//--***********************************--
 // Home page - which shows Login and Register buttons
 var Home = React.createClass({
+	
+	// initial state
+    getInitialState: function() {
+		currentPage = "/";
+        return {
+	        // the user is logged in
+            error: false
+        };
+    },
+    
     render: function() {
         return (
         
@@ -103,6 +124,9 @@ var Home = React.createClass({
 });
 
 
+//--***********************************--
+//			     ERROR BOX
+//--***********************************--
 // error container - any error that occurs on the app will redirect to this page
 var ErrorBox = React.createClass({
     render: function() {
@@ -124,6 +148,9 @@ var ErrorBox = React.createClass({
     }
 });
 
+//--***********************************--
+//				   LOGIN
+//--***********************************--
 // Login page - shows the login form and redirects to the list if login is successful
 var Login = React.createClass({
     // context so the component can access the router
@@ -160,7 +187,9 @@ var Login = React.createClass({
                 return this.setState({
                     error: true
                 });
-            this.context.router.transitionTo('/');
+            // redirect to the previous page
+            this.context.router.transitionTo(currentPage);
+            //this.context.router.replaceWith('/');
         }.bind(this));
     },
 	
@@ -193,7 +222,7 @@ var Login = React.createClass({
 							
 							<div className="buttons-box">
 								<input className="btn btn-lg dialog-button" type="submit" value="Submit" />
-								<Link  className="btn btn-lg dialog-button" to="/">Close</Link>
+								<Link  className="btn btn-lg dialog-button" to={currentPage}>Close</Link>
 							</div>
 							{this.state.error ? (
 								<div className="alert">Invalid username or password.</div>
@@ -207,6 +236,9 @@ var Login = React.createClass({
     }
 });
 
+//--***********************************--
+//				REGISTER
+//--***********************************--
 // Register page, shows the registration form and redirects to the list if login is successful
 var Register = React.createClass({
 	
@@ -244,7 +276,9 @@ var Register = React.createClass({
                 return this.setState({
                     error: true
                 });
-            this.context.router.replaceWith('/');
+            // redirect to the previous page
+            this.context.router.transitionTo(currentPage);
+            //this.context.router.replaceWith('/');
         }.bind(this));
     },
 
@@ -284,7 +318,7 @@ var Register = React.createClass({
 						</table>
 						<div className="buttons-box">
 							<input className="btn btn-lg dialog-button" type="submit" value="Register" />
-							<Link  className="btn btn-lg dialog-button" to="/">Close</Link>
+							<Link  className="btn btn-lg dialog-button" to={currentPage}>Close</Link>
 						</div>
 						{this.state.error ? (
 							<div className="alert">Invalid username or password.</div>
@@ -297,6 +331,9 @@ var Register = React.createClass({
     }
 });
 
+//--***********************************--
+//			    WRITE REVIEW
+//--***********************************--
 // write review component - logged in users can write a review using this form
 var WriteReview = React.createClass({
     // context so the component can access the router
@@ -306,6 +343,9 @@ var WriteReview = React.createClass({
 
     // initial state
     getInitialState: function() {
+		// set current page to review form page
+		currentPage = "write_review";
+		
 		var course = reviewFieldValues.course;
 		var professor = reviewFieldValues.professor;
 		var school = reviewFieldValues.school;
@@ -488,6 +528,9 @@ var WriteReview = React.createClass({
     }
 });
 
+//--***********************************--
+//				SEARCH
+//--***********************************--
 //search page - users can search by either professor, school, or course, or all of them.
 var Search = React.createClass({
     // context so the component can access the router
@@ -497,6 +540,8 @@ var Search = React.createClass({
 
     // initial state
     getInitialState: function() {
+		// set current page to the search form page
+		currentPage = "search";
         return {
             // there was an error searching
             error: false
@@ -590,6 +635,9 @@ var Search = React.createClass({
     }
 });
 
+//--***********************************--
+//				COURSES
+//--***********************************--
 // Course container component - displays results of search as courses
 var Courses = React.createClass({
 	
@@ -599,6 +647,8 @@ var Courses = React.createClass({
 
     // initial state
     getInitialState: function() {
+		//set current page to the courses page
+		currentPage = "courses";
         return {
             error: false
         };
@@ -650,6 +700,9 @@ var Courses = React.createClass({
     }
 });
 
+//--***********************************--
+//				COURSE
+//--***********************************--
 // Course component - holds all information for a particular course all in a component
 var Course = React.createClass({
     // context so the component can access the router
@@ -748,6 +801,9 @@ var Course = React.createClass({
     }
 });
 
+//--***********************************--
+//		       COURSE INFO
+//--***********************************--
 // Course Information component that holds all reviews for of the currently selected course
 var CourseInfo = React.createClass({
     // context so the component can access the router
@@ -757,7 +813,8 @@ var CourseInfo = React.createClass({
 
     // initial state
     getInitialState: function() {
-		
+		// set current page to the course info page
+		currentPage = "course_info";
 		if(!selectedCourseInfo){
 			return {
 				error: true
@@ -796,8 +853,7 @@ var CourseInfo = React.createClass({
 			course: selectedCourseInfo
 		};
     },
-    
-        
+      
     fillReviewFormValues: function() {
 		// fill pre review form values in global variable
 		reviewFieldValues = {
@@ -878,6 +934,9 @@ var CourseInfo = React.createClass({
     }
 });
 
+//--***********************************--
+//				  REVIEW
+//--***********************************--
 // Review Component - contains all review information of a particular course
 var Review = React.createClass({
     // context so the component can access the router
@@ -948,6 +1007,9 @@ var Review = React.createClass({
 });
 
 
+//--***********************************--
+//				API
+//--***********************************--
 // API object
 var api = {
 	// write review api service
@@ -1052,6 +1114,9 @@ var errorMessage = {
 	}
 };
 
+//--***********************************--
+//				   AUTH
+//--***********************************--
 // authentication object
 var auth = {
 	// register user
@@ -1173,3 +1238,4 @@ Router.run(routes, function(Handler) {
 var courseInfo = [];
 var selectedCourseInfo = {};
 var reviewFieldValues = {};
+var currentPage = "/";
