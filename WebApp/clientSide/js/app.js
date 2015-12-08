@@ -112,7 +112,7 @@ var Home = React.createClass({
 				<div id="search-home">
 					<div className="exterior">
 						
-							<div className="search-text">Start Searching</div>
+							<div className="search-text">Search Course</div>
 						
 					</div>
 				</div>
